@@ -18,6 +18,7 @@ const Login = React.createClass({
   render: function(){
     return(
       <div>
+      <img src ="https://dn-sdkcnssl.qbox.me/company/jL-zYmtSx_smx0aiGcL2.png"/>
       <h1> Spotify Favorites </h1>
       <h2> Welcome to Spotify Favorites.</h2>
       <p> Login to view your favorite bands and vote on new ones. </p>
