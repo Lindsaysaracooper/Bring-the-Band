@@ -1,16 +1,15 @@
+import store from '../store';
 import React from 'react';
 import {Router, Route, hashHistory} from 'react-router';
 import ReactDOM from 'react-dom';
-import store from '../store';
 import { Link,} from 'react-router'
-import signup from './signup';
+
 
 export default React.createClass({
   getInitialState: function(){
     return{};
   },
   updateState: function(){
-
     this.setState(store.session.toJSON());
   },
   componentDidMount: function (){
@@ -20,7 +19,6 @@ export default React.createClass({
   componentWillUMount:function(){
     store.session.off('change',this.updateState)
   },
-
   submitHandler: function (e){
       e.preventDefault();
       let username = this.refs.username.value;
@@ -29,30 +27,23 @@ export default React.createClass({
         username:username,
         password:password
       };
-store.session.login(data);
+store.session.signup(data);
   },
   render: function(){
-    console.log(this.state);
     if(this.state.authtoken){
-        console.log("what happened?");
       hashHistory.push('/searchPage');
-    }
-    return(
-      <div className="login">
-      <img src ="#"/>
-      <h1> Spotify Favorites </h1>
-      <h2> Welcome to Spotify Favorites.</h2>
-      <p> Login to view your favorite bands and vote on new ones. </p>
-      <h2> Login </h2>
-      <form onSubmit= {this.submitHandler}>
-        <input type="text" placeholder="username" ref="username"/>
-				<input type="password" placeholder="password" ref="password"/>
-				<input type="submit" value="Submit"/>
-			</form>
-      <p> Haven't joined but want to? Sign up <Link to="/signup" > HERE </Link></p>
-      </div>
-
-    )
   }
-
+return(
+<div>
+<p> Haven't joined but want to? Sign up below.</p>
+<h2> Sign Up </h2>
+<form onSubmit= {this.submitHandler}>
+  <input type="text" placeholder="username" ref="username"/>
+  <input type="password" placeholder="password" ref="password"/>
+  <input type="submit" value="Submit"/>
+</form>
+  <p> Already have a login? Go <Link to="/" > HERE </Link></p>
+</div>
+)
+}
 });

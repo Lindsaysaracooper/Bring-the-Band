@@ -1,10 +1,8 @@
-import session from './models/session';
-import Bands from './collections/bands';
-import Band from './models/band';
+import Session from './models/session';
+import SearchCollection from './collections/SearchCollection';
 
 
 export default {
   session: new Session(),
-  band: new Band(),
-  bands: new Bands()
+  searchBands: new SearchCollection(),
 };
