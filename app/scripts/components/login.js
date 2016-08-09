@@ -39,17 +39,16 @@ store.session.login(data);
     }
     return(
       <div className="login">
-      <img src ="#"/>
-      <h1> Spotify Favorites </h1>
-      <h2> Welcome to Spotify Favorites.</h2>
-      <p> Login to view your favorite bands and vote on new ones. </p>
-      <h2> Login </h2>
-      <form onSubmit= {this.submitHandler}>
-        <input type="text" placeholder="username" ref="username"/>
-				<input type="password" placeholder="password" ref="password"/>
-				<input type="submit" value="Submit"/>
-			</form>
-      <p> Haven't joined but want to? Sign up <Link to="/signup" > HERE </Link></p>
+      <h1> Bring The Band </h1>
+      <h2> Who do YOU want to see? </h2>
+      <h3> Kiss 96.7 is letting you pick the next performing artist to come to Austin.</h3>
+        <form onSubmit= {this.submitHandler}>
+        <h1 className="loginTxt"> LOG  IN </h1>
+        <input id="textbox" type="text" placeholder="username" ref="username"/>
+				<input id="textbox" type="password" placeholder="password" ref="password"/>
+				<input id="submit" type="submit" value="Submit"/>
+		      <p> Want to vote but haven't created an account? Sign-up<Link to="/signup" > HERE </Link></p>
+      	</form>
       </div>
 
     )
