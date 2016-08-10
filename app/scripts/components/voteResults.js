@@ -16,7 +16,7 @@ export default React.createClass({
       store.votes.on('update change', this.updateState);
       store.votes.fetch();
     },
-    componentWillUMount:function(){
+    componentWillUnmount:function(){
       store.votes.off('update change',this.updateState)
     },
   render: function(){
@@ -25,17 +25,18 @@ export default React.createClass({
       return(
         <li className="voteList" key={i}> {vote.name}
         <img className = "bandPhoto" src = {`${vote.imgUrl}`}/>
-        <input className="voteButton" type = "text" name="votes" value={`${vote.votes} votes`}/>
+        <input className="voteButton" type = "button" name="votes" value={`${vote.votes} votes`}/>
         </li>
       )
     })
     return(
       <div className="band">
       <h1> Vote Results </h1>
+      <Link to ="/searchPage" > Back to Search </Link>
       <ul id="voteUl">
       {voteResults}
       </ul>
-      <Link to ="/searchPage" > Back to Search </Link>
+
       </div>
     )
   }

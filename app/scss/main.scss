@@ -161,61 +161,23 @@ li form{
 
 .modal{
   width: 50%;
-opacity: .6;
-background: white;
-position: fixed;
-bottom: 11vh;
-left: 25%;
+      opacity: .8;
+      background: #9593E6;
+      position: fixed;
+      bottom: 11vh;
+      left: 25%;
+      height:246px;
 }
 
-// Vote Results
-//
-// .bandPhoto2{
-//   max-height: 35vh;
-//   overflow: hidden;
-//   width: 100%;
-// }
-//
-// #voteDiv{
-//   background-image: url('  http://static1.squarespace.com/static/54698da9e4b0dc0a73f328ea/t/54699203e4b0e3880c8fa5fa/1416204804495/MUSIC+BACKGROUND.jpg?format=1500w');
-//   -webkit-background-size: cover;
-//    -moz-background-size: cover;
-//    -o-background-size: cover;
-//    background-size: cover;
-//    background-repeat: no-repeat;
-//   min-height: 100vh;
-//   margin-top: -35px;
-//   background-attachment: fixed;
-//
-// }
-//
-// .voteList{
-//   list-style: none;
-//   font-family: 'Ruda', sans-serif;
-//    background-color: white;
-//    color:black;
-//    margin-bottom: 15px;
-//    text-align: center;
-//    padding: 5%;
-//    width: 245%;
-// }
-//
-// #voteUl{
-//   display: table-caption;
-//   font-size: 2rem;
-//   font-family: 'Monoton', cursive;
-//   text-align: center;
-//   padding-left: 69%;
-// }
-//
-// #voteResult{
-//   text-align: center;
-//     color:white;
-//     padding-top: 11vh;
-// font-size: 3rem;
-// }
-//
-// .voteButton{
-//   font-size: 2rem;
-//
-// }
+.modal-container p{
+  color:black;
+  margin-left: 2%;
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: 'Ruda', sans-serif;
+}
+
+.buttonModal{
+  font-size: 2rem;
+padding: 1%;
+}

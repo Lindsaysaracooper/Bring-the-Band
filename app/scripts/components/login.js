@@ -17,7 +17,7 @@ export default React.createClass({
     store.session.on('change', this.updateState);
 
   },
-  componentWillUMount:function(){
+  componentWillUnmount:function(){
     store.session.off('change',this.updateState)
   },
 
@@ -31,12 +31,20 @@ export default React.createClass({
       };
 store.session.login(data);
   },
-  render: function(){
-    console.log(this.state);
+
+  shouldComponentUpdate:function(){
     if(this.state.authtoken){
-        console.log("what happened?");
+
       hashHistory.push('/searchPage');
+    // }
+    return false;
+    }else {
+      return true;
     }
+  },
+  render: function(){
+
+
     return(
       <div className="login">
       <h1> Bring The Band </h1>

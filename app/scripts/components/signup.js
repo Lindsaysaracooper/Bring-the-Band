@@ -3,6 +3,7 @@ import React from 'react';
 import {Router, Route, hashHistory} from 'react-router';
 import ReactDOM from 'react-dom';
 import { Link,} from 'react-router'
+import login from './login';
 
 
 export default React.createClass({
@@ -16,7 +17,7 @@ export default React.createClass({
     store.session.on('change', this.updateState);
 
   },
-  componentWillUMount:function(){
+  componentWillUnmount:function(){
     store.session.off('change',this.updateState)
   },
   submitHandler: function (e){
@@ -34,15 +35,17 @@ store.session.signup(data);
       hashHistory.push('/searchPage');
   }
 return(
-<div>
-<p> Haven't joined but want to? Sign up below.</p>
-<h2> Sign Up </h2>
+<div className="login">
+
+      <h1 className="loginTxt"> Sign Up </h1>
 <form onSubmit= {this.submitHandler}>
+<p> Haven't joined but want to? Sign up below.</p>
   <input type="text" placeholder="username" ref="username"/>
   <input type="password" placeholder="password" ref="password"/>
   <input type="submit" value="Submit"/>
-</form>
   <p> Already have a login? Go <Link to="/" > HERE </Link></p>
+
+</form>
 </div>
 )
 }

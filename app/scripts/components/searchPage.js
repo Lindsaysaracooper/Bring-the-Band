@@ -21,7 +21,7 @@ export default React.createClass({
     store.searchBands.on('update change', this.updateState);
 
   },
-  componentWillUMount:function(){
+  componentWillUnmount:function(){
     store.searchBands.off('update change',this.updateState)
   },
 
@@ -54,12 +54,16 @@ export default React.createClass({
     store.searchBands.searchBand(searchContent);
 
 },
+  closeModal () { this.setState({showModal: false});
+},
+
 
 
   render: function(){
     let modal;
 if (this.state.showModal){
-  modal = <Modal/>
+  modal = <Modal closeModal={this.closeModal}/>
+
 }
     let bands = this.state.bands.map((band, i ,arr) =>{
       return (
@@ -83,7 +87,7 @@ if (this.state.showModal){
       <input id="bandSearch" ref='searchContent' type="text" name="Search" placeholder="Search for your favorite band/artist here."/>
       <input id ="bandSubmit" type="submit" name='button' value="Search"/>
 
-    <p><Link to="/voteResults" >See Vote Results</Link></p>
+    <p><Link id="allVotes" to="/voteResults" >See Vote Results</Link></p>
       </form>
 
   <ul>{bands}</ul>

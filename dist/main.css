@@ -133,10 +133,22 @@ li form {
 
 .modal {
   width: 50%;
-  opacity: .6;
-  background: white;
+  opacity: .8;
+  background: #9593E6;
   position: fixed;
   bottom: 11vh;
-  left: 25%; }
+  left: 25%;
+  height: 246px; }
+
+.modal-container p {
+  color: black;
+  margin-left: 2%;
+  font-size: 1.5rem;
+  text-align: center;
+  font-family: 'Ruda', sans-serif; }
+
+.buttonModal {
+  font-size: 2rem;
+  padding: 1%; }
 
 /*# sourceMappingURL=main.css.map */

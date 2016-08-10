@@ -11,16 +11,17 @@ getInitialState: function(){
 },
 
 exitClickHandler:function(e){
-  store.page.set({goToVotePage:false})
+  console.log('BUT WHYYY');
+    this.props.closeModal()
   hashHistory.push('/searchPage');
+
 },
 votesClickHandler:function(e){
-  store.page.set({read:true})
   hashHistory.push('/voteResults');
 },
 
-  openModal () { this.setState({open: true}); },
-  closeModal () { this.setState({open: false}); },
+  openModal () { this.setState({showModal: true}); },
+
 
   render: function(){
     return(
@@ -28,14 +29,14 @@ votesClickHandler:function(e){
         <div className = 'modal'>
           <h1> Thanks for Voting!</h1>
           <p> Want to see the results page?
-          <input
+          <input className="buttonModal"
             type="button"
             id="voteResults"
             value="Votes Page"
             onClick={this.votesClickHandler}/> </p>
 
             <p> Not yet, I'd like to vote more
-            <input
+            <input className="buttonModal"
               type="button"
               id="read"
               value="Back to Search Page"
