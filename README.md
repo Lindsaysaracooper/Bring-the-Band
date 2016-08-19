@@ -1,28 +1,15 @@
-# Basic Build with NPM scripts
-This is a project scaffolding and build tool for the TIY Austin Front-End Engineering course. Feel free to use and enjoy! Feedback and PRs welcome!
+Create an up-voting app for a local music venue!
 
-## Features
-- A bare bones scaffolding for an SPA, without any libraries built in
-- A static server for serving up your dev environment via http
-- `app` directory for development, preloaded with an `index.html`, `scripts/entry.js`, `scss/main.scss` and `assets/`
-- `dist` directory for deployable code
-- es2015 and babel, including module syntax
-- mocha test runner, for support testing modules and react components with es2015 and jsx syntax using enzyme and the chai assertion library
-- sass (.scss)
+A local music venue has asked you to build a promotional app: Bring The Band! Bring the band will allow users to vote for musicians they want to see at the venue. The venue hopes to gain a following, and boost their patron engagement by tracking popular bands, and trends in their market share.
 
-## Installation
-- Clone this repo (or fork then clone, if you prefer)
-- Remove the git history by running `rm -rf .git`
-- Set up a new git repo
-- Run `npm install`
-- if you get permission errors you may need to run `sudo npm install` to install a couple global dependencies
+Explorer Mode
 
-## Use
-- `npm install` will scaffold your project AND start the dev server
-- `npm start` will start the dev server and watch for changes
-- `npm test` will run any test files included in the test folder
-- `npm run deploy` will push the content of `dist/` to gh-pages
-- When the server is running, your site will be live on [http://localhost:8080/](http://localhost:8080/)
-
-## Dependencies
-- `sass` [install guide here](http://sass-lang.com/install)
+Using React components, create 2 pages, a Search page and a Votes page in addition to login/signup functionality
+Your Search page should include a Search field and search button.
+The search field should query Spotify if the user presses "enter" or clicks the search button.
+The results of the Spotify search should be displayed as a list of bands.
+For each band in the list, display an image, the band name, and a button allowing the user to vote for them.
+If the user votes for a band, save that band to your backend (use kinvey).
+Your Votes page should display all bands that have been voted for so far.
+For each band in the list, display an image, the band name. For Explorer mode, don't worry about having duplicate bands in this list.
+Write tests AT LEAST for any custom functions created on models or collections
